@@ -1,5 +1,6 @@
 you have to install net-tools package by using below command
 cmd: pkg install net-tools
+cmd: pkg install openssh
 ------
 cmd: ifconfig
 -> you will get ouput as 
