@@ -1,0 +1,19 @@
+[shubham@shubham ~]$ ip a
+after entering this command find inet in front of that you will find ip address that is the ip of this device of this device which is connected to wifi and mind it that this is local ip of wifi
+inet 192.168.128.206/24 brd 192.168.128.255 scope global dynamic noprefixroute wlp3s0
+
+[shubham@shubham ~]$ ssh yourusernameofpi@piipaddress
+
+this is second step (scan all ips from that route, if pi is connected to that wifi you can get ip of pi)
+[shubham@shubham ~]$ nmap -sn 192.168.128.1-255
+
+
+Starting Nmap 7.95 ( https://nmap.org ) at 2024-07-25 16:20 IST
+Nmap scan report for 192.168.128.19
+Host is up (0.17s latency).
+Nmap scan report for 192.168.128.206
+Host is up (0.00038s latency).
+Nmap scan report for 192.168.128.208
+Host is up (0.69s latency).
+Nmap done: 255 IP addresses (3 hosts up) scanned in 15.45 seconds
+

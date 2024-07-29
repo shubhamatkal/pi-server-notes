@@ -1,0 +1,62 @@
+you have to install net-tools package by using below command
+cmd: pkg install net-tools
+------
+cmd: ifconfig
+-> you will get ouput as 
+- $ ifconfig
+
+Warning: cannot open /proc/net/dev (Permission denied). Limited output.
+
+lo: flags=73<UP, LOOPBACK, RUNNING> mtu 65536
+
+inet 127.0.0.1 netmask 255.0.0.0
+
+unspec 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00 txqueuelen 1000 (UNSPEC)
+
+wlano: flags=4163<UP, BROADCAST, RUNNING, MULTICAST> mtu 1500
+
+inet 192.168.55.117 netmask 255.255.255.0 broadcast 192.168.55.255 unspec 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00 txqueuelen 3000 (UNSPEC)
+---->> here note that ip address which is in front of inet in wlan0 , here it is 192.168.55.117 s
+-----------
+------>>you also have to install nmap 
+cmd: pkg install nmap
+--------------------
+------>> after that you have to scan all available networks in that ip using below command.
+cmd: (wrong in some case)nmap -sn 192.168.55.1/256 here this command will give error if you have netmask of 255.255.255.0 then you should use:
+cmd: nmap -sn 192.168.55.0/24 #this will scan all networks
+output:
+nmap -sn 192.168.55.0/24
+
+Starting Nmap 7.95 (https://nmap.org) at 2024-07-29 09:57 IST
+
+Nmap scan report for 192.168.55.117
+
+Host is up (0.018s latency). Nmap scan report for 192.168.55.206
+
+Host is up (0.18s latency).
+
+Nmap scan report for 192.168.55.207
+
+Host is up (0.11s latency).
+
+Nmap scan report for 192.168.55.208
+
+Host is up (0.24s latency).
+
+Nmap scan report for 192.168.55.247
+
+Host is up (0.038s latency).
+
+Nmap done: 256 IP addresses (5 hosts up) scanned in 11.36 seconds
+-----------------
+------>> you have to check from these ip address which is associcated with you raspberry pi 
+and you below command
+cmd: ssh yourusername@ipaddressofpi
+------->> then it will ask for password for that username for pi, enter the password
+and you are successfully connected to rpi using ssh 
+for testing you can enter ls or pwd and you will get rpi file there as output.
+thanks
+--------------
+----->>exiting can be done using exit command or ctrl + c
+---------------------------------
+
